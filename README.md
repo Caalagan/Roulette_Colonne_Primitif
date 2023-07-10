@@ -1,3 +1,8 @@
+### Conclusion temporaire
+
+PAS WORTH DU TOUT, que des descente en partant de 1000€ avec 1€ de mise
+
+
 ## A faire :
 
     - Recalculer si la mise double est good ou pas

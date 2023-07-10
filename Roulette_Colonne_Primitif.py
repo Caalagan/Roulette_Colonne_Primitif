@@ -22,17 +22,23 @@ def roulette():
     #Demande de l'argent de départ
     #argent = int(input("Combien d'argent voulez vous mettre ? : "))
     #Test a 30€
-    argent = 30
+    #argent = 30
+
+    #Recupération de l'argent de départ dans la derniere ligne du fichier memoire_total.txt
+    memoire_total = open("memoire_total.txt","r")
+    argent = int(memoire_total.readlines()[-1])
+    memoire_total.close()
+
 
     #Demande du nombre de tour
     #nombre_de_tour = int(input("Combien de tour voulez vous faire ? : "))
     #Test a 100 tours
-    nombre_de_tour = 100
+    nombre_de_tour = 30
 
     #Demande de la mise
     #mise = int(input("Combien voulez vous miser sur chaque colonne ? : "))
     #Test a 2€
-    mise = 2
+    mise = 1
     mise_initiale = mise
 
     #Création du min / max
@@ -63,16 +69,22 @@ def roulette():
     #Boucle de jeu
     for i in range(nombre_de_tour):
         
+
+        fin = False
         #Vérification si l'argent est suffisant
         while True:
             if argent >= mise and mise >= mise_initiale:
                 break
             else:
                 mise = mise/2
+                #Transformer mise en int
+                mise = int(mise)
             if mise < 0.01:
                 print("Vous n'avez plus assez d'argent pour miser")
+                fin = True
                 break            
-
+        if fin == True :
+            break
 
         #Perte de la mise
         argent -= mise*2
@@ -158,7 +170,9 @@ def roulette():
             break
         
         sleep(temps_sleep)
+
     stockage_resultat(i,gain,perte,argent,perte_gain,min,max)
+    stockage_argent(argent)
     print("Gain double : ",gain_double)
     print("Perte double : ",perte_double)
 
@@ -194,6 +208,11 @@ def stockage_resultat(tours,gain,perte,argent,perte_gain,min,max):
     fichier.write("\n")
     fichier.close()
 
+def stockage_argent(argent):
+    #Ecriture des résultats dans un fichier
+    fichier = open("memoire_total.txt","a")
+    fichier.write("\n"+str(argent))
+    fichier.close()
 
         
 def affichage(numero,choix_colonne):
@@ -237,7 +256,15 @@ def affichage(numero,choix_colonne):
                         print("\033[1;32m",colonne1[i],"\033[0m",colonne2[i],"\033[1;32m",colonne3[i],"\033[0m")
 
 
-roulette()
+fin = False
+while fin == False:
+    memoire_total = open("memoire_total.txt","r")
+    argent = int(memoire_total.readlines()[-1])
+    memoire_total.close()
+    if argent >2 and argent<10000:
+        roulette()
+    else : 
+        fin = True
 
 
 #Mettre plus de fonction dans le code (pour changer les colonnes par exemple)
