@@ -1,0 +1,310 @@
+Tour : 100
+Argent de départ : 30
+Argent final : 20
+Perte/gain : 320
+
+
+Tour : 21
+Argent de départ : 30
+Argent final : 0
+Perte/gain : 6
+
+
+Tour : 48
+Argent de départ : 30
+Argent final : 0
+Perte/gain : -30
+
+
+Tour : 100
+Argent de départ : 50
+Argent final : 46
+Perte/gain : -4
+
+
+Tour : 100
+Argent de départ : 30
+Argent final : 14
+Perte/gain : -16
+
+
+Tour : 100
+Argent de départ : 30
+Argent final : 56
+Perte/gain : 26
+Minimum atteint : 30 au tour 0
+Maximum atteint : 66 au tour 57
+
+
+Tour : 25
+Argent de départ : 30
+Argent final : 26
+Perte : --4
+Minimum atteint : 20 au tour 19
+Maximum atteint : 34 au tour 2
+
+
+Tour : 40
+Argent de départ : 30
+Argent final : 32
+Gain : +2
+Minimum atteint : 8 au tour 16
+Maximum atteint : 36 au tour 39
+
+
+Tour : 50
+Argent de départ : 30
+Argent final : 10
+Perte : -20
+Minimum atteint : 4 au tour 26
+Maximum atteint : 34 au tour 2
+
+
+Tour : 30
+Argent de départ : 30
+Argent final : 30
+Perte : 0
+Minimum atteint : 24 au tour 9
+Maximum atteint : 36 au tour 3
+
+
+Tour : 20
+Argent de départ : 30.0
+Argent final : 34.0
+Gain : +4.0
+Minimum atteint : 16.0 au tour 8
+Maximum atteint : 36 au tour 3
+
+
+Tour : 28
+Argent de départ : 30.0
+Argent final : -2.0
+Perte : -32.0
+Minimum atteint : -2.0 au tour 28
+Maximum atteint : 30 au tour 0
+
+
+Tour : 40
+Argent de départ : 30.0
+Argent final : 18.0
+Perte : -12.0
+Minimum atteint : 12.0 au tour 15
+Maximum atteint : 38 au tour 4
+
+
+Tour : 100
+Argent de départ : 50.0
+Argent final : 48.0
+Perte : -2.0
+Minimum atteint : 42.0 au tour 16
+Maximum atteint : 58.0 au tour 70
+
+
+Tour : 30
+Argent de départ : 30.0
+Argent final : 48.0
+Gain : +18.0
+Minimum atteint : 16.0 au tour 13
+Maximum atteint : 80.0 au tour 27
+
+
+Tour : 22
+Argent de départ : 30.0
+Argent final : -36.0
+Perte : -66.0
+Minimum atteint : -36.0 au tour 22
+Maximum atteint : 76.0 au tour 19
+
+
+Tour : 20
+Argent de départ : 30
+Argent final : 44
+Gain : +14
+Minimum atteint : 28 au tour 7
+Maximum atteint : 44 au tour 20
+
+
+Tour : 100
+Argent de départ : 30
+Argent final : 104
+Gain : +74
+Minimum atteint : 20 au tour 5
+Maximum atteint : 110 au tour 95
+
+
+Tour : 5
+Argent de départ : 30
+Argent final : -28
+Perte : -58
+Minimum atteint : -28 au tour 5
+Maximum atteint : 32 au tour 1
+
+
+Tour : 22
+Argent de départ : 30
+Argent final : -26
+Perte : -56
+Minimum atteint : -26 au tour 22
+Maximum atteint : 34 au tour 2
+
+
+Tour : 37
+Argent de départ : 30
+Argent final : -20
+Perte : -50
+Minimum atteint : -20 au tour 37
+Maximum atteint : 40 au tour 33
+
+
+Tour : 25
+Argent de départ : 30
+Argent final : -20
+Perte : -50
+Minimum atteint : -20 au tour 25
+Maximum atteint : 40 au tour 19
+
+
+Tour : 9
+Argent de départ : 30
+Argent final : -44
+Perte : -74
+Minimum atteint : -44 au tour 9
+Maximum atteint : 52 au tour 7
+
+
+Tour : 30
+Argent de départ : 30
+Argent final : 428
+Gain : +398
+Minimum atteint : 28 au tour 7
+Maximum atteint : 428 au tour 30
+
+
+Tour : 25
+Argent de départ : 30
+Argent final : -392
+Perte : -422
+Minimum atteint : -392 au tour 25
+Maximum atteint : 504 au tour 22
+
+
+Tour : 30
+Argent de départ : 30
+Argent final : 34
+Gain : +4
+Minimum atteint : 30 au tour 0
+Maximum atteint : 34 au tour 2
+
+
+Tour : 23
+Argent de départ : 30
+Argent final : -2910
+Perte : -2940
+Minimum atteint : -2910 au tour 23
+Maximum atteint : 1698 au tour 19
+
+
+Tour : 40
+Argent de départ : 30
+Argent final : 32
+Gain : +2
+Minimum atteint : 4 au tour 8
+Maximum atteint : 44 au tour 36
+
+
+Tour : 50
+Argent de départ : 50
+Argent final : 72
+Gain : +22
+Minimum atteint : 48 au tour 2
+Maximum atteint : 90 au tour 35
+
+
+Tour : 100
+Argent de départ : 30
+Argent final : 96
+Gain : +66
+Minimum atteint : 14 au tour 27
+Maximum atteint : 96 au tour 100
+
+
+Tour : 100
+Argent de départ : 30
+Argent final : 74
+Gain : +44
+Minimum atteint : 22 au tour 41
+Maximum atteint : 74 au tour 100
+
+
+Tour : 100
+Argent de départ : 30
+Argent final : 40
+Gain : +10
+Minimum atteint : 12 au tour 47
+Maximum atteint : 72 au tour 43
+
+
+Tour : 96
+Argent de départ : 30
+Argent final : -14
+Perte : -44
+Minimum atteint : -14 au tour 96
+Maximum atteint : 88 au tour 53
+
+
+Tour : 100
+Argent de départ : 30
+Argent final : 104
+Gain : +74
+Minimum atteint : 18 au tour 2
+Maximum atteint : 104 au tour 100
+
+
+Tour : 9
+Argent de départ : 30.0
+Argent final : -8.0
+Perte : -38.0
+Minimum atteint : -8.0 au tour 9
+Maximum atteint : 36 au tour 3
+
+
+Tour : 34
+Argent de départ : 30
+Argent final : -8
+Perte : -38
+Minimum atteint : -8 au tour 34
+Maximum atteint : 52 au tour 21
+
+
+Tour : 24
+Argent de départ : 30.0
+Argent final : -2.0
+Perte : -32.0
+Minimum atteint : -2.0 au tour 24
+Maximum atteint : 34 au tour 18
+
+
+Tour : 100
+Argent de départ : 30
+Argent final : 82
+Gain : +52
+Minimum atteint : 26 au tour 1
+Maximum atteint : 104 au tour 77
+
+
+Tour : 20
+Argent de départ : 30.0
+Argent final : -8.0
+Perte : -38.0
+Minimum atteint : -8.0 au tour 20
+Maximum atteint : 40 au tour 13
+
+
+Tour : 71
+Argent de départ : 30.0
+Argent final : -12.0
+Perte : -42.0
+Minimum atteint : -12.0 au tour 71
+Maximum atteint : 80 au tour 64
+
+

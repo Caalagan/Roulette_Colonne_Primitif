@@ -1,3 +1,18 @@
+## A faire :
+
+    - Recalculer si la mise double est good ou pas
+    - Voir si la mise double a l'infini est bien ou pas
+    - Empecher de miser si la mise est superieur au solde
+
+
+
+    - Diversifier ? avec du noir rouge pair impair manque passe
+
+## A faire apres le projet :
+
+    - Faire un fichier de config pour les variables
+
+
 # Roulette_Colonne_Primitif
 
 Ce projet est une version pprimitive du projet final, il s'agit d'un jeu de roulette avec une mise precise :

@@ -20,16 +20,30 @@ def roulette():
     perte_gain = 0
 
     #Demande de l'argent de départ
-    argent = int(input("Combien d'argent voulez vous mettre ? : "))
+    #argent = int(input("Combien d'argent voulez vous mettre ? : "))
+    #Test a 30€
+    argent = 30
 
     #Demande du nombre de tour
-    nombre_de_tour = int(input("Combien de tour voulez vous faire ? : "))
+    #nombre_de_tour = int(input("Combien de tour voulez vous faire ? : "))
+    #Test a 100 tours
+    nombre_de_tour = 100
 
     #Demande de la mise
-    mise = int(input("Combien voulez vous miser sur chaque colonne ? : "))
+    #mise = int(input("Combien voulez vous miser sur chaque colonne ? : "))
+    #Test a 2€
+    mise = 2
+    mise_initiale = mise
+
+    #Création du min / max
+    min = [argent,0]
+    max = [argent,0]
 
     #Demande du temps de sleep (DEV)
-    temps_sleep = float(input("Combien de temps de sleep ? : "))
+    #temps_sleep = float(input("Combien de temps de sleep ? : "))
+    #Test a 0
+    temps_sleep = 0
+
     #Création des colonnes
     colonne1 = [1,4,7,10,13,16,19,22,25,28,31,34]
     colonne2 = [2,5,8,11,14,17,20,23,26,29,32,35]
@@ -38,8 +52,27 @@ def roulette():
     #Choix des colonnes
     choix_colonne = [1,2]
 
+    #Perte précédente
+    perte_precedente = False
+
+    #######################TEMP
+    gain_double = 0
+    perte_double = 0
+    #######################TEMP
+
     #Boucle de jeu
     for i in range(nombre_de_tour):
+        
+        #Vérification si l'argent est suffisant
+        while True:
+            if argent >= mise and mise >= mise_initiale:
+                break
+            else:
+                mise = mise/2
+            if mise < 0.01:
+                print("Vous n'avez plus assez d'argent pour miser")
+                break            
+
 
         #Perte de la mise
         argent -= mise*2
@@ -51,57 +84,92 @@ def roulette():
         if numero in colonne1 and 1 in choix_colonne:
             gain += mise
             argent += mise*3
-            perte_gain += mise*3
+            perte_gain += mise
 
             #Affichage du tour
-            affichage_resultat(i,numero,gain,perte,argent,perte_gain,choix_colonne)
+            affichage_resultat(i,mise,numero,gain,perte,argent,perte_gain,choix_colonne)
 
             #Changement du choix de colonne
             choix_colonne = [2,3]
 
+            if perte_precedente == True:
+                mise = mise_initiale
+                perte_precedente = False
+                gain_double += 1
+
         elif numero in colonne2 and 2 in choix_colonne:
             gain += mise
             argent += mise*3
-            perte_gain += mise*3
+            perte_gain += mise
 
             #Affichage du tour
-            affichage_resultat(i,numero,gain,perte,argent,perte_gain,choix_colonne)
+            affichage_resultat(i,mise,numero,gain,perte,argent,perte_gain,choix_colonne)
 
             #Changement du choix de colonne
             choix_colonne = [1,3]
 
+            if perte_precedente == True:
+                mise = mise_initiale
+                perte_precedente = False
+                gain_double += 1
+
         elif numero in colonne3 and 3 in choix_colonne:
             gain += mise
             argent += mise*3
-            perte_gain += mise*3
+            perte_gain += mise
 
             #Affichage du tour
-            affichage_resultat(i,numero,gain,perte,argent,perte_gain,choix_colonne)
+            affichage_resultat(i,mise,numero,gain,perte,argent,perte_gain,choix_colonne)
 
             #Changement du choix de colonne
             choix_colonne = [1,2]
+            
+            if perte_precedente == True:
+                mise = mise_initiale
+                perte_precedente = False
+                gain_double += 1
 
         else:
             perte += mise*2
-            perte_gain -= mise
+            perte_gain -= mise*2
 
             #Affichage du tour
-            affichage_resultat(i,numero,gain,perte,argent,perte_gain,choix_colonne)
+            affichage_resultat(i,mise,numero,gain,perte,argent,perte_gain,choix_colonne)
 
+            #Augmentation de la mise si perte
 
-        if argent <= 0:
+            if perte_precedente == False:
+                mise *=2
+                perte_precedente = True
+            else:
+                mise *=2
+                perte_double += 1
+
+        if argent < min[0]:
+            min[0] = argent
+            min[1] = i+1
+        elif argent > max[0]:
+            max[0] = argent
+            max[1] = i+1 
+
+        #Vérification si l'argent est suffisant
+        if argent <= mise_initiale:
             print("Vous n'avez plus d'argent")
             break
-
+        
         sleep(temps_sleep)
+    stockage_resultat(i,gain,perte,argent,perte_gain,min,max)
+    print("Gain double : ",gain_double)
+    print("Perte double : ",perte_double)
 
 
-def affichage_resultat(i,numero,gain,perte,argent,perte_gain,choix_colonne):
+def affichage_resultat(i,mise,numero,gain,perte,argent,perte_gain,choix_colonne):
     #Affichage des résultats
         affichage(numero,choix_colonne)
         print("")
         print("")
-        print("Tour : ",i+1)
+        print("Tours : ",i+1)
+        print("Mise : ",mise)
         print("Tirage : ",numero)
         print("Gain : ",gain)
         print("Perte : ",perte)
@@ -110,7 +178,22 @@ def affichage_resultat(i,numero,gain,perte,argent,perte_gain,choix_colonne):
         print("")
         print("")
         
-        
+def stockage_resultat(tours,gain,perte,argent,perte_gain,min,max):
+    #Ecriture des résultats dans un fichier
+    fichier = open("resultat.txt","a")
+    fichier.write("Tour : "+str(tours+1)+"\n")
+    fichier.write("Argent de départ : "+str(argent+perte-gain)+"\n")
+    fichier.write("Argent final : "+str(argent)+"\n")
+    if perte_gain > 0:
+        fichier.write("Gain : +"+str(perte_gain)+"\n")
+    else:
+        fichier.write("Perte : "+str(perte_gain)+"\n")
+    fichier.write("Minimum atteint : "+str(min[0])+" au tour "+str(min[1])+"\n")
+    fichier.write("Maximum atteint : "+str(max[0])+" au tour "+str(max[1])+"\n")
+    fichier.write("\n")
+    fichier.write("\n")
+    fichier.close()
+
 
         
 def affichage(numero,choix_colonne):
